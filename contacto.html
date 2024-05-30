@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/favicon.png" type="image/png">
+</head>
+<body>
+
+<!-- HEADER --> 
+    <header>
+      <h1 class="nombre-sitio">Tienda <span>Muebles</span></h1> 
+    </header>
+
+<!-- NAV -->
+<div class="contenedor-navegacion">
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </label>
+    <nav class="nav-principal contenedor">
+        <a class="enlace" href="index.html">Inicio</a>
+        <a class="enlace" href="nosotros.html">Nosotros</a>
+        <a class="enlace" href="tienda.html">Tienda</a>
+        <a class="enlace" href="blog.html">Blog</a>
+        <a class="enlace" href="galeria.html">Galeria</a>
+        <a class="enlace" href="contacto.html">Contacto</a>
+    </nav>
+</div>
+
+<!-- MAIN (SECTION) informacion mas relevante. Uno por web -->
+    <main class="contenido-principal contenedor">
+        <h2 class="text-center">Contacto</h2>
+
+        <form class="formulario" action="#mail">
+
+            <fieldset>
+                <legend>Tus Datos</legend>
+
+                <div class="campo">
+                    <label for="Nombre">Nombre: </label>
+                    <input type="text" name="" id="nombre" placeholder="Tu nombre...">
+                </div>
+
+                <div class="campo">
+                    <label for="asunto">Asunto: </label>
+                    <input type="text" name="" id="asunto" placeholder="Tu consulta...">
+                </div>
+
+                <div class="campo">
+                    <label for="email">Mail: </label>
+                    <input type="email" name="" id="email" placeholder="Tu email...">
+                </div>
+
+                <div class="campo">
+                    <label for="telefono">Telefono: </label>
+                    <input type="tel" name="" id="telefono" placeholder="Tu telefono...">
+                </div>
+
+                <div class="campo">
+                    <label for="texto">Comentarios: </label>
+                    <textarea name="text-area" id="text-area" placeholder="Tus comentarios..."></textarea>
+                </div>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Pais</legend>
+                
+                <div class="campo">
+                    <label for="pais">Pais</label>
+
+                    <select name="" id="pais">
+                        <option value="Seleccione" disabled>-- Seleccione pais --</option>
+                        <option value="SP">Espana</option>
+                        <option value="PO">Portugal</option>
+                        <option value="GE">Alemania</option>
+                        <option value="Otros">Otro pais</option>
+                    </select>
+
+                </div>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Informacion Extra</legend>
+
+                <div class="campo">
+                    <label for="cliente">Cliente</label>
+                    <input type="radio" name="tipo-persona" id="cliente" value="cliente"> <!--al poner el mismo name a los radio input los "vincula" y solo deja seleccionar uno de ellos-->
+                </div>
+
+                <div class="campo">
+                    <label for="provedor">Proveedor</label>
+                    <input type="radio" name="tipo-persona" id="proveedor" value="proveedor"> <!--el value sirve paraenviar la informacion al servidor con PHP o phyton  -->
+                </div>
+
+                <div class="campo">
+                    <label for="categoria">Categoria de interes</label>
+                    <input list="categorias" name="categorias">
+
+                        <datalist id="categorias">
+                                <option value="Cocina"></option>
+                                <option value="Oficina"></option>
+                                <option value="Hogar"></option>
+                                <option value="Exterior"></option>
+                                <option value="Colegios"></option>
+                        </datalist>
+                </div>
+
+            </fieldset>
+
+            <div class="enviar-borrar-formulario">
+                <input class="boton-formulario" type="submit" value="Enviar Formulario" required>
+                <input class="boton-formulario" type="reset" value="Borrar">
+            </div>
+        </form>
+
+    </main>
+
+
+
+<!-- FOOTER -->
+    <footer>
+        <div class="site-footer">
+
+            <div class="grid-footer contenedor">
+
+                <div>
+                    <h3>Categorias</h3>
+
+                    <nav class="footer-menu">
+                        <a href="#">Cocina</a>
+                        <a href="#">Oficina</a>
+                        <a href="#">Jardin</a>
+                        <a href="#">Garaje</a>
+                        <a href="#">Dormitorios</a>
+                    </nav>
+                </div>
+            
+                <div>
+                    <h3>Sobre Nosotros</h3>
+                
+                    <nav class="footer-menu">
+                        <a href="#">Nuestra Historia</a>
+                        <a href="#">Valores</a>
+                        <a href="#">Ofertas empleo</a>
+                        <a href="#">Politica de Privacidad</a>
+                        <a href="#">Terminos del Servicio</a>
+                    </nav>
+                </div>
+
+                <div>
+                    <h3>Soporte</h3>
+                
+                    <nav class="footer-menu">
+                        <a href="#">Preguntas frecuentes</a>
+                        <a href="#">Soporte en linea</a>
+                        <a href="#">Confianza y seguridad</a>
+                    </nav>
+                </div>
+
+            </div>
+
+        </div>
+
+        <p class="copyright">Derechos de autor reservados para web Tienda Muebles</p>
+    </footer>
+    
+</body>
+</html>

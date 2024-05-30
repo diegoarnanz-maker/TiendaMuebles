@@ -1,0 +1,588 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /* 1REM = 10px HACK */
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: "Raleway", serif;
+    font-size: 1.4rem;
+    line-height: 1.6; /* interlineado */
+}
+
+/* Globales (se aplican a todo el proyecto) */
+
+h1, h2, h3 {
+    font-family: "Playfair Display", serif;
+    margin: 0 0 3rem 0; /* eliminar margin a todos los head */
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+@media (min-width: 768px) {
+    h1 {
+        font-size: 4rem;
+    }
+} 
+
+h2 {
+    font-size: 1.8rem;
+}
+
+@media (min-width: 768px) {
+    h2 {
+        font-size: 2.5rem;
+    }
+} 
+
+h3 {
+    font-size: 1.4rem;
+}
+
+@media (min-width: 768px) {
+    h3 {
+        font-size: 2rem;
+    }
+} 
+
+a {
+    text-decoration: none;
+    color: #252525;
+}
+
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.boton {
+    background-color: #8cbc00;
+    color: whitesmoke;
+    display: block; /* tomar todo el ancho disponible */
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 0.8rem;
+    text-align: center;
+    border: none;
+}
+
+.boton:hover {
+    background-color: #769c02;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+/* Utilidades */
+.text-center {
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .max-width-30{
+        max-width: 30rem;
+    }  
+} 
+
+/* Header y Navegacion */
+
+.nombre-sitio {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.nombre-sitio span {
+    color: #037bc0;
+}
+
+.contenedor-navegacion {
+    border-top: 1px solid #252525;
+    position: relative;
+}
+
+.nav-principal {
+    padding-top: 1.8rem;
+    padding-bottom: 1.8rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-principal a {
+    font-size: 1.4rem;
+    padding: 0.5rem;
+}
+
+.nav-principal a:hover{
+    color: #037bc0;
+}
+
+/*menu hamburguesa*/
+
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+}
+
+.menu-icon .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #037bc0;
+    margin: 4px 0;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .contenedor-navegacion{
+        margin-bottom: 5.5rem;
+    }
+    .nav-principal {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    #menu-toggle:checked + .menu-icon + .nav-principal {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+}
+/*FIN menu hamburguesa*/
+
+.hero {
+    background-image: url(img/principal.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 10rem;
+}
+
+@media (min-width: 768px) {
+    .hero {
+        height: 45rem;
+    }
+} 
+
+/* Listado de categorias */
+
+.categorias {
+    padding-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+.categoria a {
+    display: block;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 1.8rem;
+    
+}
+
+@media (min-width: 768px) {
+    .categoria{
+        margin-bottom: 0;
+    }
+} 
+
+.categoria a:hover {
+    background-color: #037bc0;
+    color: whitesmoke;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+}
+
+.categoria img{
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .listado-categorias {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+} 
+
+/* Sobre nosotros */
+
+.sobre-nosotros {
+    background-image: linear-gradient(to bottom, transparent 50%, #037bc0 50%, #037bc0 100%),
+    url(img/nosotros.jpg);
+    background-position: center, top right; /*Primero indicamos posicion del color, despues de la img*/
+    background-repeat: no-repeat;
+    background-size: 100%, 60rem;
+}
+
+@media (min-width: 768px) {
+    .sobre-nosotros {
+        background-image: linear-gradient(to right, transparent 50%, #037bc0 50%, #037bc0 100%),
+        url(img/nosotros.jpg);
+        background-position: left center;
+        padding: 7rem 0;
+        background-size: 100%, 100rem;
+    }
+} 
+
+.sobre-nosotros-grid {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+}
+
+@media (min-width: 768px) {
+    .sobre-nosotros-grid {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 5rem;
+        grid-template-rows: unset; /*en este tamanio no quiero gridtemplaterows*/
+    }
+} 
+
+.texto-nosotros {
+    grid-row: 2 / 3;
+    color: whitesmoke;
+    padding: 3rem;
+}
+
+@media (min-width: 768px) {
+    .texto-nosotros {
+        grid-column: 2 / 3;
+    }
+} 
+
+/* Listado de productos */
+
+.contenido-principal {
+    padding-top: 3rem;
+}
+
+@media (min-width: 768px) {
+    .listado-productos {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 1.5rem; /* para separar las columnas/filas de los productos */
+    }
+    
+    .producto:nth-child(1) {
+        grid-column-start: 1;
+        grid-column-end: 7; /* con herramientas del desarrollador podemos visualizar las lineas del grid */
+        display: grid; /* este producto queremos que tenga el texto a la derecha e imagen a la izq */
+        grid-template-columns: 3fr 1fr; /* primera columna 3/4 partes y segunda 1/4 */
+    }
+    
+    .producto:nth-child(1) img {
+        height: 40rem;
+        width: 100%;
+        object-fit: cover; 
+        /* posiciona la img dentro de un contenido sin revasar las medidas definidas en el grid */
+    }
+    
+    .producto:nth-child(2) {
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+    
+    .producto:nth-child(2) img,
+    .producto:nth-child(3) img {
+        height: 25rem;
+        width: 100%;
+        object-fit: cover;
+    }
+    
+    .producto:nth-child(3) {
+        grid-column-start: 4;
+        grid-column-end: 7;
+    }
+    
+    .producto:nth-child(4) {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    
+    .producto:nth-child(5) {
+        grid-column-start: 3;
+        grid-column-end: 5;
+    }
+    
+    .producto:nth-child(6) {
+        grid-column-start: 5;
+        grid-column-end: 7;
+    }
+     
+} 
+
+.producto {
+    background-color: #037bc0;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+    .producto{
+        margin-bottom: 0;
+    }
+} 
+
+.producto:last-child{
+    border-bottom: 0;
+}
+
+.texto-producto {
+    text-align: center;
+    color: whitesmoke;
+    padding: 1.5rem;
+}
+
+.texto-producto h3 {
+    margin: 0;
+}
+
+.texto-producto p {
+    margin: 0 0 0.5rem 0;
+}
+
+.texto-producto .precio {
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+/* Footer */
+
+.site-footer {
+    border-top: 1px solid #252525;
+    margin-top: 3rem;
+    padding: 3rem;
+  
+}
+
+.site-footer h3 {
+    margin-bottom: 0.5rem;
+}
+
+.grid-footer > div{ /*solo afecta al primer nivel de hijos de div*/
+    margin-bottom: 1.2rem;
+}
+
+.grid-footer > div:last-child{ 
+    margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+    .grid-footer {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+} 
+
+.footer-menu a {
+    display: block;
+    font-size: 1.4rem;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 3rem;
+    font-style: italic;
+}
+
+/********NOSOTROS********/
+
+.contenido-nosotros{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    /*cuando llega a 250px cambia los dor elementos a 1fr*/
+    grid-template-columns: repeat(auto-fit, minmax( 25rem, 1fr));
+    column-gap: 4rem;
+}
+
+.informacion-nosotros{
+    display: flex;
+    flex-direction: column;
+    /*gracias al flex tenemos acceso a la disposicion vertical, si no tocamos nada mas, no notaremos nada*/
+    justify-content: center;
+    padding: 3rem;
+}
+
+@media (min-width: 768px) {
+    .informacion-nosotros{
+        padding: 0;
+    }
+} 
+
+/********BLOG********/
+
+@media (min-width: 768px) {
+    .contenedor-blog{
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            column-gap: 4rem;
+    }
+    .entrada-meta{
+        display: flex;
+        justify-content: space-between;
+    }
+} 
+
+.entrada{
+    border-bottom: 1px solid #252525;
+    margin-bottom: 2rem;
+    padding: 0 2rem 4rem 2rem;
+}
+
+.entrada h2{
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .entrada h2{
+        text-align: left;
+    }
+} 
+
+.entrada:last-child{ /*Para elinimar el borde inferior de la ultima entrada blog*/
+    border-bottom: none;
+}
+
+.entrada-meta p{
+    font-weight: 700;
+}
+
+.entrada-meta span{
+    color: #037bc0;
+}
+
+.enlace-leer{
+    display: flex;
+    justify-content: center;
+}
+
+/*********ENTRADA BLOG**********/
+
+.contenido-entrada-blog{
+    padding: 0 2rem 4rem 2rem;
+}
+
+@media (min-width: 768px) {
+    .contenido-entrada-blog{
+        width: 60rem;
+        margin: 0 auto;
+        padding: 0;
+    }
+} 
+
+/********GALERIA********/
+
+.galeria{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 768px) {
+    .galeria{
+        grid-template-columns: repeat(3, 1fr);
+    }
+} 
+
+.galeria img{ /*Para ajustar las imagenes a las dimensiones y queden alineadas*/
+    height: 40rem;
+    width: 40rem;
+    object-fit: cover;
+}
+
+/********FORMULARIO********/
+
+.formulario{
+    max-width: 60rem;
+    margin: 0 auto;
+    
+}
+
+.formulario fieldset{
+    border: 1px solid #252525;
+    margin-bottom: 2rem;
+    border-radius: 1.6rem;
+}
+
+.formulario legend{
+    background-color: #005485;
+    width: 100%;
+    color: whitesmoke;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+    padding: 0.8rem;
+    margin-bottom: 2rem;
+    border-radius: 1rem;
+}
+
+.campo{
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.campo label{
+    flex-basis: 10rem; /*si el contenedor tiene flex, hace que todos los label tengan el anchjo marcado*/
+}
+
+.campo input:not([type="radio"]),
+.campo select,
+.campo textarea{
+    border: 1px solid #e1e1e1;
+    flex: 1;
+    padding: 1rem;
+}
+
+@media (min-width: 768px) {
+    .boton-formulario{
+        width: auto;
+    }
+} 
+
+.boton-formulario{
+    margin-bottom: 1rem;
+    background-color: #8cbc00;
+    color: whitesmoke;
+    display: block; /* tomar todo el ancho disponible */
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 0.8rem;
+    text-align: center;
+    border: none;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.boton-formulario:hover{
+    background-color: #769c02;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .enviar-borrar-formulario{
+        margin: 0 20rem;
+    }
+} 
+
+/* MEDIA QUERY - estilo mobile first */
